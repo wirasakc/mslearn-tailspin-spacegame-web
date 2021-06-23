@@ -53,11 +53,7 @@ steps:
 
 - script: echo "##vso[task.prependpath]$HOME/.dotnet/tools"
   displayName: 'Update PATH'
-
-- script: reportgenerator "-reports:$(Build.SourcesDirectory)/**/*.cobertura.xml" "-targetdir:$(Build.SourcesDirectory)/coverlet/reports" -reporttypes:Cobertura;htmlInline
-  displayName: Generate code coverage report
-  continueOnError: true
-
+  
 - task: DotNetCoreCLI@2
   displayName: 'Install .NET tools from local manifest'
   inputs:
